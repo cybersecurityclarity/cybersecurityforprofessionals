@@ -6,31 +6,32 @@
 <title>Cybersecurity Bootcamp for Professionals</title>
 <style>
   :root {
-    --navy: #0a1929;
-    --navy-light: #14283d;
-    --accent: #00b4d8;
-    --accent-dark: #0091ad;
-    --text-light: #e8f1f5;
-    --text-muted: #9fb3c8;
-    --white: #ffffff;
-    --black: #05090d;
-    --border: #1e3a52;
+    --blue: #1c6ea4;
+    --blue-dark: #0f3057;
+    --teal: #00a3ad;
+    --green: #6fbe44;
+    --yellow: #d7df23;
+    --gray: #e9edf0;
+    --text: #2b2f33;
+    --muted: #6b7280;
+    --border: #dfe3e6;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background: var(--black);
-    color: var(--text-light);
+    background: #ffffff;
+    color: var(--text);
     line-height: 1.6;
   }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; color: var(--accent-dark); }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .topbar {
+    height: 8px;
+    background: linear-gradient(90deg, var(--blue) 0%, var(--teal) 35%, var(--green) 65%, var(--yellow) 100%);
+  }
   nav.site-nav {
-    background: var(--navy-light);
+    background: var(--blue-dark);
     border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
   }
   nav.site-nav ul {
     list-style: none;
@@ -38,63 +39,54 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.25rem;
+    max-width: 1100px;
+    margin: 0 auto;
   }
   nav.site-nav a {
     display: block;
-    padding: 0.9rem 1rem;
-    color: var(--text-light);
+    padding: 0.85rem 1rem;
+    color: #ffffff;
     font-size: 0.9rem;
     font-weight: 500;
   }
   nav.site-nav a:hover {
-    background: var(--navy);
-    color: var(--accent);
+    background: rgba(255,255,255,0.1);
     text-decoration: none;
   }
   header.site-header {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--black) 100%);
-    padding: 3rem 1.5rem 2.5rem;
+    padding: 2.5rem 1.5rem 2rem;
     text-align: center;
-    border-bottom: 3px solid var(--accent);
   }
   header.site-header h1 {
-    font-size: 2.2rem;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.5rem;
-    color: var(--white);
+    font-size: 2rem;
+    color: var(--blue-dark);
+    letter-spacing: 0.2px;
   }
   main { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem 4rem; }
   section {
-    padding: 3rem 0;
+    padding: 2.5rem 0;
     border-bottom: 1px solid var(--border);
   }
   section:last-of-type { border-bottom: none; }
   h2 {
-    color: var(--white);
-    font-size: 1.7rem;
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--accent);
+    color: var(--blue-dark);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 3px solid var(--teal);
     display: inline-block;
   }
-  h3 { color: var(--accent); font-size: 1.15rem; margin: 1.2rem 0 0.6rem; }
-  p { margin-bottom: 1rem; color: var(--text-light); }
-  ul, ol { margin: 0 0 1rem 1.4rem; color: var(--text-light); }
-  li { margin-bottom: 0.4rem; }
-  .placeholder { color: var(--text-muted); font-style: italic; }
+  h3 { color: var(--blue); font-size: 1.05rem; margin: 1rem 0 0.5rem; }
+  p { margin-bottom: 1rem; }
+  ul, ol { margin: 0 0 1rem 1.4rem; }
+  li { margin-bottom: 0.35rem; }
+  .placeholder { color: var(--muted); font-style: italic; }
   code {
-    background: var(--navy-light);
+    background: var(--gray);
     padding: 0.15rem 0.4rem;
     border-radius: 4px;
     font-size: 0.9em;
-    color: #7fdbff;
-  }
-  .card {
-    background: var(--navy-light);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
+    color: var(--blue-dark);
   }
   /* Instructor */
   .instructor-card {
@@ -104,146 +96,121 @@
     flex-wrap: wrap;
   }
   .instructor-card img {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--accent);
+    border: 3px solid var(--teal);
     flex-shrink: 0;
   }
   .instructor-info { flex: 1; min-width: 240px; }
-  .instructor-info h3 { margin-top: 0; }
-  .instructor-links { margin: 0.6rem 0 1rem; list-style: none; padding: 0; }
-  .instructor-links li { margin-bottom: 0.3rem; }
-  .worked-list {
-    margin-top: 0.5rem;
-  }
+  .instructor-info h3 { margin-top: 0; font-size: 1.2rem; color: var(--blue-dark); }
+  .instructor-links { margin: 0.5rem 0 1rem; list-style: none; padding: 0; }
+  .instructor-links li { margin-bottom: 0.25rem; }
   .worked-list ul { margin-left: 1.2rem; }
-  /* TOC */
-  .toc-box {
-    background: var(--navy-light);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.5rem 1.5rem 0.5rem;
-  }
-  .toc-quicklinks {
-    list-style: none;
+  /* Schedule */
+  .week-pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem 1.2rem;
-    margin: 0 0 1.5rem 0;
-    padding-bottom: 1.2rem;
-    border-bottom: 1px solid var(--border);
+    gap: 0.5rem;
+    margin: 1rem 0 1.5rem;
   }
-  .toc-quicklinks a { font-size: 0.9rem; }
-  ul.toc-weeks { list-style: none; margin: 0; }
-  li.toc-week {
-    margin-bottom: 1.4rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border);
-  }
-  li.toc-week:last-child { border-bottom: none; }
-  li.toc-week > a { display: block; }
-  li.toc-week > a strong {
-    display: block;
-    color: var(--white);
-    font-size: 1.05rem;
-  }
-  li.toc-week > a strong:hover { color: var(--accent); }
-  span.toc-topic {
-    display: block;
-    color: var(--text-muted);
+  .week-pill {
+    background: var(--gray);
+    color: var(--blue-dark);
+    padding: 0.4rem 0.85rem;
+    border-radius: 20px;
     font-size: 0.85rem;
-    font-style: italic;
-    margin-top: 0.15rem;
-  }
-  ul.toc-days {
-    list-style: none;
-    margin: 0.6rem 0 0 1rem;
-    padding-left: 0.8rem;
-    border-left: 2px solid var(--border);
-  }
-  ul.toc-days li {
-    font-size: 0.88rem;
-    color: var(--text-light);
-    margin-bottom: 0.3rem;
-  }
-  li.toc-lab {
-    color: var(--accent) !important;
     font-weight: 600;
+    border: 1px solid var(--border);
   }
-  li.toc-nolab {
-    color: var(--text-muted) !important;
-    font-style: italic;
-  }
-  li.toc-subrange {
-    color: var(--accent-dark);
-    font-weight: 700;
-    margin-top: 0.6rem;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  /* Schedule table */
+  .week-pill:hover { background: var(--teal); color: #fff; text-decoration: none; }
   table.schedule {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
-    font-size: 0.92rem;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
   }
   table.schedule th {
-    background: var(--navy-light);
-    color: var(--white);
+    background: var(--blue-dark);
+    color: #fff;
     text-align: left;
-    padding: 0.75rem;
-    border-bottom: 2px solid var(--accent);
+    padding: 0.7rem;
   }
   table.schedule td {
-    padding: 0.65rem 0.75rem;
+    padding: 0.6rem 0.7rem;
     border-bottom: 1px solid var(--border);
     vertical-align: top;
   }
   tr.week-divider td {
-    background: var(--navy);
-    color: var(--accent);
-    padding-top: 1rem;
-    padding-bottom: 0.5rem;
-    font-size: 1rem;
+    background: var(--gray);
+    color: var(--blue-dark);
+    font-weight: 700;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
   }
   tr.subrange td {
-    background: var(--navy-light);
-    color: var(--text-muted);
-    padding: 0.4rem 0.75rem;
+    background: #f6f8f9;
+    color: var(--muted);
+    font-style: italic;
+    padding: 0.35rem 0.7rem;
   }
-  span.na { color: var(--text-muted); font-style: italic; }
+  span.na { color: var(--muted); font-style: italic; }
   .table-wrap { overflow-x: auto; }
-  footer.site-footer {
-    background: var(--navy);
-    text-align: center;
-    padding: 2rem 1rem;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    border-top: 3px solid var(--accent);
+  /* Capstone */
+  .doc-list { list-style: none; margin: 0; padding: 0; }
+  .doc-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
   }
-  footer.site-footer a { color: var(--accent); }
+  .doc-title { font-weight: 600; color: var(--blue-dark); }
+  .doc-actions a {
+    display: inline-block;
+    margin-left: 0.75rem;
+    padding: 0.35rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .doc-actions a.view { border: 1px solid var(--blue); color: var(--blue); }
+  .doc-actions a.download { background: var(--teal); color: #fff; }
+  .doc-actions a.view:hover, .doc-actions a.download:hover { text-decoration: none; opacity: 0.85; }
+  footer.site-footer {
+    background: var(--blue-dark);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    color: #cbd5db;
+    font-size: 0.85rem;
+  }
+  footer.site-footer a { color: #a9d8e6; }
   @media (max-width: 700px) {
-    header.site-header h1 { font-size: 1.6rem; }
-    nav.site-nav a { padding: 0.7rem 0.6rem; font-size: 0.82rem; }
-    h2 { font-size: 1.35rem; }
-    table.schedule { font-size: 0.8rem; }
+    header.site-header h1 { font-size: 1.5rem; }
+    nav.site-nav a { padding: 0.65rem 0.55rem; font-size: 0.8rem; }
+    h2 { font-size: 1.25rem; }
+    table.schedule { font-size: 0.78rem; }
     .instructor-card { flex-direction: column; align-items: center; text-align: center; }
+    .doc-list li { flex-direction: column; align-items: flex-start; }
   }
 </style>
 </head>
 <body>
 
+<div class="topbar"></div>
+
 <nav class="site-nav">
   <ul>
-    <li><a href="#toc">Table of Contents</a></li>
     <li><a href="#overview">Course Overview</a></li>
     <li><a href="#instructor">Instructor</a></li>
     <li><a href="#prerequisites">Prerequisites &amp; Setup</a></li>
     <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#capstone">Capstone</a></li>
     <li><a href="#labs">Labs</a></li>
     <li><a href="#presentations">Presentations</a></li>
     <li><a href="#quizzes">Quizzes / Kahootz</a></li>
@@ -255,154 +222,6 @@
 </header>
 
 <main>
-
-<section id="toc">
-  <h2>Table of Contents</h2>
-  <div class="toc-box">
-    <ul class="toc-quicklinks">
-      <li><a href="#overview">Course Overview</a></li>
-      <li><a href="#instructor">Instructor Information</a></li>
-      <li><a href="#prerequisites">Prerequisites &amp; Setup</a></li>
-      <li><a href="#schedule">Full Schedule Table</a></li>
-      <li><a href="#labs">Labs</a></li>
-      <li><a href="#presentations">Presentations</a></li>
-      <li><a href="#quizzes">Quizzes / Kahootz</a></li>
-    </ul>
-    <ul class="toc-weeks">
-<li class="toc-week"><a href="#week-1"><strong>Week 1 &mdash; August 3-7, 2026</strong><span class="toc-topic">Foundations of Networking and Security</span></a>
-<ul class="toc-days">
-<li>Day 1: Fundamentals of Networking and Security Concepts 1</li>
-<li class="toc-lab">&#9733; Lab &mdash; Identifying and Exploiting Network Vulnerabilities &mdash; Team-Based Lab: Participants work in teams to secure a network infrastructure, with each team member adopting a specific role to ensure comprehensive security coverage.</li>
-<li>Day 2: Fundamentals of Networking and Security Concepts 2</li>
-<li class="toc-lab">&#9733; Lab &mdash; Identifying and Exploiting Network Vulnerabilities</li>
-<li>Day 3: Introduction to Linux 1</li>
-<li class="toc-lab">&#9733; Lab &mdash; Securing Linux Environments Against Common Attacks</li>
-<li>Day 4: Introduction to Linux 2</li>
-<li class="toc-lab">&#9733; Lab &mdash; Securing Linux Environments Against Common Attacks</li>
-<li>Day 5: Introduction to Linux 3</li>
-<li class="toc-lab">&#9733; Lab &mdash; Securing Linux Environments Against Common Attacks</li>
-</ul></li>
-<li class="toc-week"><a href="#week-2"><strong>Week 2 &mdash; August 10-14, 2026</strong><span class="toc-topic">Advanced Linux and Windows Administration</span></a>
-<ul class="toc-days">
-<li>Day 1: Introduction to Linux Security</li>
-<li class="toc-lab">&#9733; Lab &mdash; Implementing Initial Security Policies</li>
-<li>Day 2: System Hardening</li>
-<li class="toc-lab">&#9733; Lab &mdash; Hardening a Linux System</li>
-<li>Day 3: User and Permission Management</li>
-<li class="toc-lab">&#9733; Lab &mdash; Securing User Accounts and File Permissions &mdash; Team-Based Lab: Teams configure and enforce security policies for a Linux system, with each member focusing on specific areas such as user management, file permissions, and system hardening.</li>
-<li>Day 4: Windows Server Administration 1</li>
-<li class="toc-lab">&#9733; Lab &mdash; Hardening Windows Servers</li>
-<li>Day 5: Windows Server Administration 2</li>
-<li class="toc-lab">&#9733; Lab &mdash; Hardening Windows Servers</li>
-</ul></li>
-<li class="toc-week"><a href="#week-3"><strong>Week 3 &mdash; August 17-21, 2026</strong><span class="toc-topic">Virtualizaztion and Container Foundations</span></a>
-<ul class="toc-days">
-<li>Day 1: Introduction to Virtualization 1</li>
-<li class="toc-lab">&#9733; Lab &mdash; Identifying and Mitigating Virtualization-Specific Threats</li>
-<li>Day 2: Introduction to Virtualization 2</li>
-<li class="toc-lab">&#9733; Lab &mdash; Identifying and Mitigating Virtualization-Specific Threats</li>
-<li>Day 3: Enterprise Virtualization 1</li>
-<li class="toc-lab">&#9733; Lab &mdash; Securing Enterprise Virtualization Environments &mdash; Team-Based Lab: Teams are tasked with securing a virtualized enterprise environment, with each member adopting a role focused on specific aspects of virtualization security, such as access control, monitoring, and incident response.</li>
-<li>Day 4: Enterprise Virtualization 2</li>
-<li class="toc-lab">&#9733; Lab &mdash; Securing Enterprise Virtualization Environments</li>
-<li>Day 5: Enterprise Virtualization 3</li>
-<li class="toc-lab">&#9733; Lab &mdash; Securing Enterprise Virtualization Environments</li>
-</ul></li>
-<li class="toc-week"><a href="#week-4"><strong>Week 4 &mdash; August 24-28, 2026</strong><span class="toc-topic">Network Security and Cryptography 101</span></a>
-<ul class="toc-days">
-<li>Day 1: Networking Protocols, Authentication and Authorization 1</li>
-<li class="toc-lab">&#9733; Lab &mdash; Configuring Networks to Defend Against Protocol-Based Attacks; Strengthening Authentication Mechanisms</li>
-<li>Day 2: Networking Protocols, Authentication and Authorization 2</li>
-<li class="toc-lab">&#9733; Lab &mdash; Configuring Networks to Defend Against Protocol-Based Attacks; Strengthening Authentication Mechanisms</li>
-<li>Day 3: Cryptography Fundamentals</li>
-<li class="toc-lab">&#9733; Lab &mdash; Encrypting and decrypting files with symmetric (AES) and asymmetric (RSA) algorithms; generating and verifying SHA-256 hashes and digital signatures</li>
-<li>Day 4: Public Key Infrastructure (PKI) and Certificates</li>
-<li class="toc-lab">&#9733; Lab &mdash; Generating a CSR, issuing certificates from an internal CA, configuring TLS on a sample web service, inspecting certificates in a browser and with OpenSSL</li>
-<li>Day 5: Applied Cryptography for Banking</li>
-<li class="toc-lab">&#9733; Lab &mdash; Team-Based Lab: A junior SOC team is asked to investigate a TLS misconfiguration alert on a customer-facing banking app, identify weak ciphers and certificate issues, and recommend remediation.</li>
-</ul></li>
-<li class="toc-week"><a href="#week-5"><strong>Week 5 &mdash; August 31 – September 4, 2026</strong><span class="toc-topic">Next Generation Firewalls</span></a>
-<ul class="toc-days">
-<li>Day 1: Firewall Technologies 1</li>
-<li class="toc-lab">&#9733; Lab &mdash; Configuring Firewalls to Block Advanced Threats</li>
-<li>Day 2: Firewall Technologies 2</li>
-<li class="toc-lab">&#9733; Lab &mdash; Configuring Firewalls to Block Advanced Threats</li>
-<li>Day 3: Firewall Technologies 3</li>
-<li class="toc-lab">&#9733; Lab &mdash; Configuring Firewalls to Block Advanced Threats</li>
-<li>Day 4: Enterprise Security Posture 1</li>
-<li class="toc-lab">&#9733; Lab &mdash; Developing a Robust Security Posture &mdash; Team-Based Lab: Teams configure and manage next-generation firewalls, with each participant responsible for different aspects such as rule configuration, traffic monitoring, and network segmentation.</li>
-<li>Day 5: Enterprise Security Posture 2</li>
-<li class="toc-lab">&#9733; Lab &mdash; Developing a Robust Security Posture</li>
-</ul></li>
-<li class="toc-week"><a href="#week-6"><strong>Week 6 &mdash; September 8-11, 2026</strong><span class="toc-topic">Cybersecurity Threats and Vulnerabilities</span></a>
-<ul class="toc-days">
-<li>Day 1: Threat and Vulnerability Management 1</li>
-<li class="toc-lab">&#9733; Lab &mdash; Conducting Vulnerability Assessments</li>
-<li>Day 2: Threat and Vulnerability Management 2</li>
-<li class="toc-lab">&#9733; Lab &mdash; Conducting Vulnerability Assessments</li>
-<li>Day 3: Software and Systems Security 1</li>
-<li class="toc-lab">&#9733; Lab &mdash; Applying Forensic Techniques</li>
-<li>Day 4: Software and Systems Security 2</li>
-<li class="toc-lab">&#9733; Lab &mdash; Applying Forensic Techniques</li>
-</ul></li>
-<li class="toc-week"><a href="#week-7"><strong>Week 7 &mdash; September 14-18, 2026</strong><span class="toc-topic">Security Operations , Incident REsponse and Integration of AI</span></a>
-<ul class="toc-days">
-<li>Day 1: Security Operations and SOC Workflows 1</li>
-<li class="toc-lab">&#9733; Lab &mdash; Triaging a queue of simulated bank SIEM alerts as a Tier 1 analyst, properly escalating to Tier 2; simulating incident response</li>
-<li>Day 2: Security Operations and SOC Workflows 2</li>
-<li class="toc-lab">&#9733; Lab &mdash; Triaging a queue of simulated bank SIEM alerts as a Tier 1 analyst, properly escalating to Tier 2; simulating incident response</li>
-<li>Day 3: Integration of AI in the SOC — Foundations</li>
-<li class="toc-lab">&#9733; Lab &mdash; Walking through an AI-generated alert verdict, validating each piece of supporting evidence, and deciding whether to accept, modify, or escalate</li>
-<li>Day 4: AI-Assisted Triage and Prompting Skills</li>
-<li class="toc-lab">&#9733; Lab &mdash; Using a Security Copilot-style assistant to triage a phishing alert, summarize a multi-step incident, and draft a stakeholder communication</li>
-<li>Day 5: Responsible AI in a Regulated Bank</li>
-<li class="toc-lab">&#9733; Lab &mdash; Reviewing an AI-generated investigation, identifying where the AI was wrong or unclear, and documenting an analyst-level override &mdash; Team-Based Lab: Teams work together to respond to a simulated security incident, with roles such as incident commander, forensic analyst, and remediation specialist.</li>
-</ul></li>
-<li class="toc-week"><a href="#week-8"><strong>Week 8 &mdash; September 23-25, 2026</strong><span class="toc-topic">SOC Tools and Data Analytics 101</span></a>
-<ul class="toc-days">
-<li>Day 1: Packet and Protocol Analysis</li>
-<li class="toc-lab">&#9733; Lab &mdash; Traffic Flow Analysis</li>
-<li>Day 2: SIEM Deep Dive and the Modern Bank SOC Stack</li>
-<li class="toc-lab">&#9733; Lab &mdash; Writing basic Splunk searches and Sentinel KQL queries to investigate a simulated banking incident</li>
-<li>Day 3: Data Analytics 101 for Security and Fraud</li>
-<li class="toc-lab">&#9733; Lab &mdash; Exploring a sample bank security/fraud dataset and identifying questions a dashboard should answer</li>
-</ul></li>
-<li class="toc-week"><a href="#week-9"><strong>Week 9 &mdash; September 30-October 2, 2026</strong><span class="toc-topic">Social Engineering and Human Factor Security</span></a>
-<ul class="toc-days">
-<li>Day 1: Power BI Fundamentals for Security Analysts</li>
-<li class="toc-lab">&#9733; Lab &mdash; Building a SOC Operations dashboard from sample data — alerts by severity, MTTR by tier, top alert types, false-positive ratio</li>
-<li>Day 2: Power BI Copilot and Dashboards for Fraud and Governance</li>
-<li class="toc-lab">&#9733; Lab &mdash; Teams build and present a bank-flavored security/fraud dashboard, using Copilot to generate at least one visualization and one written summary, then defend their dashboard design choices and governance controls to a stakeholder panel</li>
-<li>Day 3: Social Engineering Tactics</li>
-<li class="toc-lab">&#9733; Lab &mdash; Crafting Social Engineering Scenarios; Developing and Implementing Mitigation Plans; Testing Mitigation Strategies in a Simulated Environment</li>
-</ul></li>
-<li class="toc-week"><a href="#week-10"><strong>Week 10 &mdash; October 7-9, 2026, October 14-16, 2026, October 20-23, 2026</strong><span class="toc-topic">Captone Project and Review</span></a>
-<ul class="toc-days">
-<li class="toc-subrange">October 7-9, 2026</li>
-<li>Day 1: Social Engineering Tactics</li>
-<li class="toc-lab">&#9733; Lab &mdash; Crafting Social Engineering Scenarios; Developing and Implementing Mitigation Plans; Testing Mitigation Strategies in a Simulated Environment</li>
-<li>Day 2: Enterprise-Level Security Considerations 1</li>
-<li class="toc-lab">&#9733; Lab &mdash; Developing Security Awareness Programs; Conducting Security Audits Focused on Human Factors; Simulating Incident Response for a Social Engineering Attack</li>
-<li>Day 3: Enterprise-Level Security Considerations 2</li>
-<li class="toc-lab">&#9733; Lab &mdash; Developing Security Awareness Programs; Conducting Security Audits Focused on Human Factors; Simulating Incident Response for a Social Engineering Attack</li>
-<li class="toc-subrange">October 14-16, 2026</li>
-<li>Day 4: Capstone Project 1</li>
-<li class="toc-lab">&#9733; Lab &mdash; Comprehensive Project Integrating All Learned Skills, Securing a Complex Environment</li>
-<li>Day 5: Capstone Project 2</li>
-<li class="toc-lab">&#9733; Lab &mdash; Comprehensive Project Integrating All Learned Skills, Securing a Complex Environment</li>
-<li class="toc-subrange">October 20-23, 2026</li>
-<li>Day 1: Capstone Project 1</li>
-<li class="toc-lab">&#9733; Lab &mdash; Comprehensive Project Integrating All Learned Skills, Securing a Complex Environment</li>
-<li>Day 2: Capstone Project 2</li>
-<li class="toc-lab">&#9733; Lab &mdash; Comprehensive Project Integrating All Learned Skills, Securing a Complex Environment</li>
-<li>Day 3: Review and Presentation</li>
-<li class="toc-lab">&#9733; Lab &mdash; Presentations, Peer Review, Final Review of Key Concepts</li>
-<li>Day 4: Capstone Day</li>
-<li class="toc-nolab">Lab: n/a</li>
-</ul></li>
-    </ul>
-  </div>
-</section>
 
 <section id="overview">
   <h2>Course Overview</h2>
@@ -419,8 +238,8 @@
 
 <section id="instructor">
   <h2>Instructor Information</h2>
-  <div class="card instructor-card">
-    <img src="images/andry-rakotomalala.jpg" alt="Andry Rakotomalala">
+  <div class="instructor-card">
+    <img src="data:image/jpeg;base64,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" alt="Andry Rakotomalala">
     <div class="instructor-info">
       <h3>Andry Rakotomalala (Adrian)</h3>
       <ul class="instructor-links">
@@ -460,7 +279,19 @@
 
 <section id="schedule">
   <h2>Schedule</h2>
-  <p>Full day-by-day schedule for all 10 weeks. Dates reflect the current cohort calendar.</p>
+  <p>Full day-by-day schedule for all 10 weeks. Jump to a week, or scroll the full table below.</p>
+  <div class="week-pills">
+<a class="week-pill" href="#week-1">Week 1</a>
+<a class="week-pill" href="#week-2">Week 2</a>
+<a class="week-pill" href="#week-3">Week 3</a>
+<a class="week-pill" href="#week-4">Week 4</a>
+<a class="week-pill" href="#week-5">Week 5</a>
+<a class="week-pill" href="#week-6">Week 6</a>
+<a class="week-pill" href="#week-7">Week 7</a>
+<a class="week-pill" href="#week-8">Week 8</a>
+<a class="week-pill" href="#week-9">Week 9</a>
+<a class="week-pill" href="#week-10">Week 10</a>
+  </div>
   <div class="table-wrap">
   <table class="schedule">
     <thead>
@@ -479,7 +310,7 @@
 <tr><td>Week 2, Day 3 (Aug 12)</td><td>User and Permission Management</td><td>Securing User Accounts and File Permissions &mdash; Team-Based Lab: Teams configure and enforce security policies for a Linux system, with each member focusing on specific areas such as user management, file permissions, and system hardening.</td><td><a href="#">Presentation Slides</a></td></tr>
 <tr><td>Week 2, Day 4 (Aug 13)</td><td>Windows Server Administration 1</td><td>Hardening Windows Servers</td><td><a href="#">Presentation Slides</a></td></tr>
 <tr><td>Week 2, Day 5 (Aug 14)</td><td>Windows Server Administration 2</td><td>Hardening Windows Servers</td><td><a href="#">Presentation Slides</a></td></tr>
-<tr class="week-divider" id="week-3"><td colspan="4"><strong>Week 3: August 17-21, 2026 &mdash; Virtualizaztion and Container Foundations</strong></td></tr>
+<tr class="week-divider" id="week-3"><td colspan="4"><strong>Week 3: August 17-21, 2026 &mdash; Virtualization and Container Foundations</strong></td></tr>
 <tr><td>Week 3, Day 1 (Aug 17)</td><td>Introduction to Virtualization 1</td><td>Identifying and Mitigating Virtualization-Specific Threats</td><td><a href="#">Presentation Slides</a></td></tr>
 <tr><td>Week 3, Day 2 (Aug 18)</td><td>Introduction to Virtualization 2</td><td>Identifying and Mitigating Virtualization-Specific Threats</td><td><a href="#">Presentation Slides</a></td></tr>
 <tr><td>Week 3, Day 3 (Aug 19)</td><td>Enterprise Virtualization 1</td><td>Securing Enterprise Virtualization Environments &mdash; Team-Based Lab: Teams are tasked with securing a virtualized enterprise environment, with each member adopting a role focused on specific aspects of virtualization security, such as access control, monitoring, and incident response.</td><td><a href="#">Presentation Slides</a></td></tr>
@@ -502,7 +333,7 @@
 <tr><td>Week 6, Day 2 (Sep 9)</td><td>Threat and Vulnerability Management 2</td><td>Conducting Vulnerability Assessments</td><td><a href="#">Presentation Slides</a></td></tr>
 <tr><td>Week 6, Day 3 (Sep 10)</td><td>Software and Systems Security 1</td><td>Applying Forensic Techniques</td><td><a href="#">Presentation Slides</a></td></tr>
 <tr><td>Week 6, Day 4 (Sep 11)</td><td>Software and Systems Security 2</td><td>Applying Forensic Techniques</td><td><a href="#">Presentation Slides</a></td></tr>
-<tr class="week-divider" id="week-7"><td colspan="4"><strong>Week 7: September 14-18, 2026 &mdash; Security Operations , Incident REsponse and Integration of AI</strong></td></tr>
+<tr class="week-divider" id="week-7"><td colspan="4"><strong>Week 7: September 14-18, 2026 &mdash; Security Operations , Incident Response and Integration of AI</strong></td></tr>
 <tr><td>Week 7, Day 1 (Sep 14)</td><td>Security Operations and SOC Workflows 1</td><td>Triaging a queue of simulated bank SIEM alerts as a Tier 1 analyst, properly escalating to Tier 2; simulating incident response</td><td><a href="#">Presentation Slides</a></td></tr>
 <tr><td>Week 7, Day 2 (Sep 15)</td><td>Security Operations and SOC Workflows 2</td><td>Triaging a queue of simulated bank SIEM alerts as a Tier 1 analyst, properly escalating to Tier 2; simulating incident response</td><td><a href="#">Presentation Slides</a></td></tr>
 <tr><td>Week 7, Day 3 (Sep 16)</td><td>Integration of AI in the SOC — Foundations</td><td>Walking through an AI-generated alert verdict, validating each piece of supporting evidence, and deciding whether to accept, modify, or escalate</td><td><a href="#">Presentation Slides</a></td></tr>
@@ -516,7 +347,7 @@
 <tr><td>Week 9, Day 1 (Sep 30)</td><td>Power BI Fundamentals for Security Analysts</td><td>Building a SOC Operations dashboard from sample data — alerts by severity, MTTR by tier, top alert types, false-positive ratio</td><td><a href="#">Presentation Slides</a></td></tr>
 <tr><td>Week 9, Day 2 (Oct 1)</td><td>Power BI Copilot and Dashboards for Fraud and Governance</td><td>Teams build and present a bank-flavored security/fraud dashboard, using Copilot to generate at least one visualization and one written summary, then defend their dashboard design choices and governance controls to a stakeholder panel</td><td><a href="#">Presentation Slides</a></td></tr>
 <tr><td>Week 9, Day 3 (Oct 2)</td><td>Social Engineering Tactics</td><td>Crafting Social Engineering Scenarios; Developing and Implementing Mitigation Plans; Testing Mitigation Strategies in a Simulated Environment</td><td><a href="#">Presentation Slides</a></td></tr>
-<tr class="week-divider" id="week-10"><td colspan="4"><strong>Week 10: Captone Project and Review</strong></td></tr>
+<tr class="week-divider" id="week-10"><td colspan="4"><strong>Week 10: Capstone Project and Review</strong></td></tr>
 <tr class="subrange"><td colspan="4"><em>October 7-9, 2026</em></td></tr>
 <tr><td>Week 10, Day 1 (Oct 7)</td><td>Social Engineering Tactics</td><td>Crafting Social Engineering Scenarios; Developing and Implementing Mitigation Plans; Testing Mitigation Strategies in a Simulated Environment</td><td><a href="#">Presentation Slides</a></td></tr>
 <tr><td>Week 10, Day 2 (Oct 8)</td><td>Enterprise-Level Security Considerations 1</td><td>Developing Security Awareness Programs; Conducting Security Audits Focused on Human Factors; Simulating Incident Response for a Social Engineering Attack</td><td><a href="#">Presentation Slides</a></td></tr>
@@ -532,6 +363,27 @@
     </tbody>
   </table>
   </div>
+</section>
+
+<section id="capstone">
+  <h2>Capstone</h2>
+  <p>The capstone is the culminating activity of the bootcamp: a team-based project where participants harden, monitor, and defend a simulated bank environment against a live, instructor-injected incident, then present their response to the full training organization.</p>
+  <ul class="doc-list">
+    <li>
+      <span class="doc-title">Capstone Project Document &mdash; Securing Meridian Trust Bank</span>
+      <span class="doc-actions">
+        <a class="view" href="docs/capstone-project.pdf" target="_blank" rel="noopener">View</a>
+        <a class="download" href="docs/capstone-project.pdf" download>Download</a>
+      </span>
+    </li>
+    <li>
+      <span class="doc-title">Capstone Evaluation Rubric</span>
+      <span class="doc-actions">
+        <a class="view" href="docs/capstone-rubric.pdf" target="_blank" rel="noopener">View</a>
+        <a class="download" href="docs/capstone-rubric.pdf" download>Download</a>
+      </span>
+    </li>
+  </ul>
 </section>
 
 <section id="labs">
